@@ -1,20 +1,13 @@
-> [!WARNING]
-> It's [`@t8/events`](https://github.com/t8js/events) now.
+# event-patterns
 
----
-
-![browser](https://img.shields.io/badge/browser-✓-345?labelColor=345&color=345&style=flat-square) ![node](https://img.shields.io/badge/node-✓-345?labelColor=345&color=345&style=flat-square) ![TypeScript](https://img.shields.io/badge/TypeScript-✓-345?labelColor=345&color=345&style=flat-square)
-
-# evtm
-
-*A lightweight zero-dependency event manager with flexible event type matching*
+A lightweight zero-dependency event manager with flexible event type matching
 
 ## Usage
 
 Initialization:
 
 ```js
-import {EventManager} from 'evtm';
+import {EventManager} from 'event-patterns';
 
 let eventManager = new EventManager();
 ```
