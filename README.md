@@ -15,7 +15,7 @@ let eventEmitter = new EventEmitter();
 Adding a handler of a specific event type:
 
 ```js
-eventEmitter.on("task started", event => {
+eventEmitter.on("task started", (event) => {
   console.log(event);
 });
 ```
@@ -23,7 +23,7 @@ eventEmitter.on("task started", event => {
 Of all events matching the pattern:
 
 ```js
-eventEmitter.on(/^task\s/, event => {
+eventEmitter.on(/^task\s/, (event) => {
   console.log(event);
 });
 ```
@@ -31,7 +31,7 @@ eventEmitter.on(/^task\s/, event => {
 With captured parameters:
 
 ```js
-eventEmitter.on(/^(\S+)\s(?<status>.*)$/, event => {
+eventEmitter.on(/^(\S+)\s(?<status>.*)$/, (event) => {
   console.log(event.params[0], event.params.status);
 });
 ```
@@ -39,7 +39,7 @@ eventEmitter.on(/^(\S+)\s(?<status>.*)$/, event => {
 Adding a handler of all events dispatched to the `eventEmitter` instance:
 
 ```js
-let listener = eventEmitter.on("*", event => {
+let listener = eventEmitter.on("*", (event) => {
   console.log(event);
 });
 ```
