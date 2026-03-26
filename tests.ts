@@ -1,8 +1,8 @@
 import {
-type Event,
-EventEmitter,
-type EventListener,
-type MatchParams,
+  type Event,
+  EventEmitter,
+  type EventListener,
+  type MatchParams,
 } from "./index.ts";
 
 let eventEmitter = new EventEmitter();
@@ -12,14 +12,14 @@ let listener: EventListener;
 console.log("exact event type");
 
 listener = eventEmitter.addListener(
-"update",
-(event: Event<{ dx: number }>) => {
+  "update",
+  (event: Event<{ dx: number }>) => {
     console.assert(
-    event.type === "update",
-    "event type should match listener type",
+      event.type === "update",
+      "event type should match listener type",
     );
     x += event.data.dx;
-},
+  },
 );
 console.assert(eventEmitter._listeners.length === 1, "added listener");
 console.assert(x === 0, "initial state");
@@ -43,10 +43,10 @@ console.log("event type pattern");
 x = 0;
 
 listener = eventEmitter.addListener(
-/^task\s/,
-(event: Event<{ dx: number }>) => {
+  /^task\s/,
+  (event: Event<{ dx: number }>) => {
     x += event.data.dx;
-},
+  },
 );
 console.assert(x === 0, "initial state");
 
@@ -62,7 +62,7 @@ console.log("event type pattern params");
 let p: MatchParams | null | undefined;
 
 listener = eventEmitter.addListener(/^(\S+)\s+(?<status>.+)$/, (event) => {
-p = event.params;
+  p = event.params;
 });
 console.assert(p === undefined, "initial state");
 
@@ -71,9 +71,8 @@ console.assert(p?.[0] === "task" && p?.status === "started", "task started");
 
 eventEmitter.emit("subtask completed", { dx: -42 });
 console.assert(
-p?.[0] === "subtask" && p?.status === "completed",
-"subtask completed",
+  p?.[0] === "subtask" && p?.status === "completed",
+  "subtask completed",
 );
 
 listener.remove();
-  
