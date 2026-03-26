@@ -1,6 +1,6 @@
 {
   "name": "event-patterns",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Lightweight event manager with flexible event type matching",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
