@@ -1,16 +1,16 @@
 {
-    "include": ["./index.ts", "./tests.ts", "./src"],
-    "compilerOptions": {
-        "declaration": true,
-        "emitDeclarationOnly": true,
-        "lib": ["ESNext", "DOM"],
-        "target": "esnext",
-        "outDir": "dist",
-        "module": "nodenext",
-        "moduleResolution": "nodenext",
-        "allowImportingTsExtensions": true,
-        "strict": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true
-    }
+  "include": ["./index.ts", "./tests.ts", "./src"],
+  "compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "lib": ["ESNext", "DOM"],
+    "target": "esnext",
+    "outDir": "dist",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "allowImportingTsExtensions": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  }
 }
