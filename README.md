@@ -1,53 +1,53 @@
 # event-patterns
 
-A lightweight zero-dependency event manager with flexible event type matching
+Lightweight zero-dependency event emitter with flexible event type matching
 
 ## Usage
 
 Initialization:
 
 ```js
-import {EventManager} from 'event-patterns';
+import { EventEmitter } from "event-patterns";
 
-let eventManager = new EventManager();
+let eventEmitter = new EventEmitter();
 ```
 
 Adding a handler of a specific event type:
 
 ```js
-eventManager.addListener('task started', event => {
-    console.log(event);
+eventEmitter.on("task started", event => {
+  console.log(event);
 });
 ```
 
 Of all events matching the pattern:
 
 ```js
-eventManager.addListener(/^task\s/, event => {
-    console.log(event);
+eventEmitter.on(/^task\s/, event => {
+  console.log(event);
 });
 ```
 
 With captured parameters:
 
 ```js
-eventManager.addListener(/^(\S+)\s(?<status>.*)$/, event => {
-    console.log(event.params[0], event.params.status);
+eventEmitter.on(/^(\S+)\s(?<status>.*)$/, event => {
+  console.log(event.params[0], event.params.status);
 });
 ```
 
-Adding a handler of all events dispatched to the `eventManager` instance:
+Adding a handler of all events dispatched to the `eventEmitter` instance:
 
 ```js
-let listener = eventManager.addListener('*', event => {
-    console.log(event);
+let listener = eventEmitter.on("*", event => {
+  console.log(event);
 });
 ```
 
 Dispatching an event of a specific type and properties:
 
 ```js
-eventManager.dispatch('task started', {x: 42});
+eventEmitter.emit("task started", { x: 42 });
 ```
 
 Removing a previously declared listener:

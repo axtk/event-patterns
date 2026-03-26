@@ -2,7 +2,9 @@
   "name": "event-patterns",
   "version": "4.2.4",
   "description": "Lightweight event manager with flexible event type matching",
-  "main": "dist/index.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "type": "module",
   "scripts": {
     "preversion": "npx npm-run-all shape test",
@@ -21,9 +23,5 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/axtk/event-patterns.git"
-  },
-  "devDependencies": {
-    "esbuild": "0.24.0",
-    "npm-run-all": "4.1.5"
   }
 }
