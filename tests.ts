@@ -1,5 +1,5 @@
-import {Event, EventManager} from './src/EventManager';
-import {MatchParams} from './src/matchPattern';
+import {Event, EventManager} from './src/EventManager.ts';
+import {MatchParams} from './src/matchPattern.ts';
 
 let eventManager = new EventManager(), listener;
 let x = 0;

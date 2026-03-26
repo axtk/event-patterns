@@ -1,2 +1,2 @@
-export * from './src/EventManager';
-export * from './src/matchPattern';
+export * from './src/EventManager.ts';
+export * from './src/matchPattern.ts';
